@@ -56,7 +56,7 @@ export default {
 
   colorMode: {
     preference: "", // default value of $colorMode.preference
-    fallback: "light", // fallback value if not system preference found
+    fallback: "", // fallback value if not system preference found
     hid: "nuxt-color-mode-script",
     globalName: "__NUXT_COLOR_MODE__",
     componentName: "ColorScheme",
