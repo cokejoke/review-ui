@@ -1,19 +1,22 @@
 <template>
-  <a :href="link" target="_blank" class="smartlink">SmartLink</a>
+  <a :href="link" :style="'background: ' + bg" target="_blank" class="button"
+    ><slot
+  /></a>
 </template>
 
 <script lang="ts">
 export default {
-  props: ["link"],
+  props: ["link", "bg"],
 };
 </script>
 
 <style lang="scss">
-.smartlink {
+.button {
   display: inline-block;
   vertical-align: middle;
   text-decoration: none;
   background-color: #5d3779;
+  text-align: center;
   color: white;
   padding: 15px 30px;
   border-radius: 10px;
