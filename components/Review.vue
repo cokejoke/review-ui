@@ -35,13 +35,19 @@
           asperiores. Animi?
         </p>
       </div>
-      <div class="col-3 col-12-sm">
-        <BuyMeACoffee link="https://www.buymeacoffee.com/JMankowski" />
+      <div class="col-12">
+        <h4>Support:</h4>
       </div>
-      <div class="col-3 col-12-sm">
-        <SmartLink link="https://google.com" />
+      <div class="col-2 col-12-sm">
+        <Button link="" bg="#5d3779">BETTOGH</Button>
       </div>
-      <div class="col-6 col-12-sm right">
+      <div class="col-2 col-12-sm">
+        <Button link="" bg="#5d3779">Artist</Button>
+      </div>
+      <div class="col-4 col-12-sm center">
+        <Button link="" bg="#773572">SmartLink</Button>
+      </div>
+      <div class="col-4 col-12-sm right">
         <ShareButtons title="Title" hashtags="soos,saas,sees" />
       </div>
     </div>
@@ -50,6 +56,7 @@
 
 <style lang="scss">
 .review {
+  margin: 10px 0;
   border-radius: 15px;
   padding: 25px;
   background-color: var(--bg-secondary);
