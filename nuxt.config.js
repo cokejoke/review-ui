@@ -28,7 +28,11 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: ["~assets/css/main.css"],
+  css: [
+    "~assets/css/main.css",
+    "~node_modules/medium-editor/dist/css/medium-editor.css",
+    "~node_modules/vuejs-medium-editor/src/themes/default.css",
+  ],
 
   styleResources: {
     scss: [
@@ -39,7 +43,7 @@ export default {
   },
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: [{ src: "~/plugins/medium-editor", ssr: false }],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,

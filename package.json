@@ -13,7 +13,8 @@
   "dependencies": {
     "core-js": "^3.15.1",
     "nuxt": "^2.15.7",
-    "vue-social-sharing": "^3.0.8"
+    "vue-social-sharing": "^3.0.8",
+    "vuejs-medium-editor": "^1.2.6"
   },
   "devDependencies": {
     "@nuxt/types": "^2.15.7",
