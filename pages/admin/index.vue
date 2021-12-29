@@ -2,15 +2,15 @@
   <div>
     <div class="row">
       <div class="col-12">
-        <Input type="text" placeholder="Title" />
+        <Input v-model="title" type="text" placeholder="Title" />
       </div>
       <div class="col-12">
         <div id="editor">
-          <medium-editor :options="options" />
+          <medium-editor v-model="content" :options="options" />
         </div>
       </div>
       <div class="col-12 right">
-        <Button link="" bg="#5d3779">Post</Button>
+        <Button @click="post()" bg="#5d3779">Post</Button>
       </div>
     </div>
   </div>
@@ -20,8 +20,16 @@
 import Vue from "vue";
 
 export default Vue.extend({
+  methods: {
+    post() {
+      console.log(this.title);
+      console.log(this.content);
+    },
+  },
   data() {
     return {
+      title: "",
+      content: "",
       options: {
         uploadUrl: "https://api.imgur.com/3/image",
         uploadUrlHeader: { Authorization: "Client-ID 7940d003b13c677" },

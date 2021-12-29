@@ -1,10 +1,16 @@
 <template>
-  <input :style="'background: ' + bg" :type="type" :placeholder="placeholder" />
+  <input
+    :style="'background: ' + bg"
+    :type="type"
+    :placeholder="placeholder"
+    :value="value"
+    @input="$emit('input', $event.target.value)"
+  />
 </template>
 
 <script lang="ts">
 export default {
-  props: ["type", "placeholder", "bg"],
+  props: ["type", "placeholder", "bg", "value"],
 };
 </script>
 
