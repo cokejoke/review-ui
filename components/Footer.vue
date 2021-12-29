@@ -18,13 +18,16 @@ export default Vue.extend({
 
 <style lang="scss">
 footer {
+  position: absolute;
+  bottom: 0;
+  height: 70px;
   width: 100%;
   background-color: var(--bg-secondary);
   text-align: center;
   p {
+    line-height: 70px;
     color: var(--color-secondary);
     margin: 0;
-    padding: 20px 0;
   }
 }
 </style>

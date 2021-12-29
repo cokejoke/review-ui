@@ -1,18 +1,16 @@
 <template>
   <div>
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <Input type="text" placeholder="Title" />
+    <div class="row">
+      <div class="col-12">
+        <Input type="text" placeholder="Title" />
+      </div>
+      <div class="col-12">
+        <div id="editor">
+          <medium-editor :options="options" />
         </div>
-        <div class="col-12">
-          <div id="editor">
-            <medium-editor :options="options" />
-          </div>
-        </div>
-        <div class="col-12 right">
-          <Button link="" bg="#5d3779">Post</Button>
-        </div>
+      </div>
+      <div class="col-12 right">
+        <Button link="" bg="#5d3779">Post</Button>
       </div>
     </div>
   </div>
