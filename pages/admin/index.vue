@@ -3,14 +3,15 @@
     <div class="container">
       <div class="row">
         <div class="col-12">
+          <Input type="text" placeholder="Title" />
+        </div>
+        <div class="col-12">
           <div id="editor">
-            <medium-editor
-              v-model="content"
-              :options="options"
-              :onChange="onChange"
-              v-on:uploaded="uploadCallback"
-            />
+            <medium-editor :options="options" />
           </div>
+        </div>
+        <div class="col-12 right">
+          <Button link="" bg="#5d3779">Post</Button>
         </div>
       </div>
     </div>
@@ -23,7 +24,6 @@ import Vue from "vue";
 export default Vue.extend({
   data() {
     return {
-      content: "",
       options: {
         uploadUrl: "https://api.imgur.com/3/image",
         uploadUrlHeader: { Authorization: "Client-ID 7940d003b13c677" },
@@ -62,19 +62,15 @@ export default Vue.extend({
       },
     };
   },
-  methods: {
-    onChange() {
-      console.log(this.content);
-    },
-    uploadCallback(url: any) {
-      console.log(url);
-    },
-  },
 });
 </script>
 
 <style lang="scss">
+.test {
+  font-size: 100px;
+}
 #editor {
+  margin: 0;
   padding: 10px 40px;
   background-color: var(--bg-secondary);
   color: var(--color-secondary);
