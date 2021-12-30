@@ -9,6 +9,22 @@
           <medium-editor v-model="content" :options="options" />
         </div>
       </div>
+      <div class="col-12">
+        <Input v-model="artist" type="text" placeholder="Artist" />
+      </div>
+      <div class="col-12">
+        <Input v-model="bettogh" type="text" placeholder="BettoGH" />
+      </div>
+      <div class="col-12">
+        <Input v-model="smartlink" type="text" placeholder="Smartlink" />
+      </div>
+      <div class="col-12">
+        <Input
+          v-model="hashtags"
+          type="text"
+          placeholder="Hashtags (ex.: test1,test2,test3)"
+        />
+      </div>
       <div class="col-12 right">
         <Button @click="post()" bg="#5d3779">Post</Button>
       </div>
@@ -29,6 +45,10 @@ export default Vue.extend({
   data() {
     return {
       title: "",
+      artist: "",
+      bettogh: "",
+      smartlink: "",
+      hashtags: "",
       content: "",
       options: {
         uploadUrl: "https://api.imgur.com/3/image",
