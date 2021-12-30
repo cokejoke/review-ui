@@ -79,4 +79,11 @@ export default Vue.extend({
     font-size: 20px;
   }
 }
+@media only screen and (max-width: 719px) {
+  .review {
+    .center {
+      text-align: left;
+    }
+  }
+}
 </style>
