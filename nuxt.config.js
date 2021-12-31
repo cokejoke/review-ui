@@ -57,7 +57,20 @@ export default {
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ["vue-social-sharing/nuxt"],
+  modules: ["vue-social-sharing/nuxt", "@nuxtjs/axios", "@nuxtjs/proxy"],
+
+  axios: {
+    proxy: true,
+  },
+
+  proxy: {
+    "/api/": {
+      target: "http://localhost:8080/",
+      pathRewrite: {
+        "^/api/": "",
+      },
+    },
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},

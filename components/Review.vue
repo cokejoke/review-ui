@@ -1,25 +1,21 @@
 <script lang="ts">
 import Vue from "vue";
+import { PropType } from "vue";
+import { ReviewDTO } from "dto/ReviewDTO";
 
 export default Vue.extend({
   props: {
-    title: {
-      type: String,
+    review: {
+      type: Object as PropType<ReviewDTO>,
     },
-    content: {
-      type: String,
-    },
-    artist: {
-      type: String,
-    },
-    reviewer: {
-      type: String,
-    },
-    smartlink: {
-      type: String,
-    },
-    hashtags: {
-      type: String,
+  },
+  methods: {
+    formatDate(dateString: string): string {
+      const date = new Date(dateString);
+      const day = ("0" + date.getDate()).slice(-2);
+      const month = ("0" + (date.getMonth() + 1)).slice(-2);
+      const year = date.getFullYear();
+      return `${day}.${month}.${year}`;
     },
   },
 });
@@ -29,27 +25,27 @@ export default Vue.extend({
   <div class="review">
     <div class="row">
       <div class="col-12 right">
-        <span class="published">20.10.2021</span>
+        <span class="published">{{ formatDate(review.date) }}</span>
         <i class="material-icons">schedule</i>
       </div>
       <div class="col-12">
-        <h1 id="title">{{ title }}</h1>
+        <h1 id="title">{{ review.title }}</h1>
       </div>
-      <div v-html="content" class="col-12"></div>
+      <div v-html="review.content" class="col-12"></div>
       <div class="col-12">
         <h4>Support:</h4>
       </div>
       <div class="col-2 col-12-sm">
-        <Button :link="reviewer" bg="#5d3779">BETTOGH</Button>
+        <Button :link="review.reviewer" bg="#5d3779">BETTOGH</Button>
       </div>
       <div class="col-2 col-12-sm">
-        <Button :link="artist" bg="#5d3779">Artist</Button>
+        <Button :link="review.artist" bg="#5d3779">Artist</Button>
       </div>
       <div class="col-4 col-12-sm center">
-        <Button :link="smartlink" bg="#773572">SmartLink</Button>
+        <Button :link="review.smartlink" bg="#773572">SmartLink</Button>
       </div>
       <div class="col-4 col-12-sm right">
-        <ShareButtons :title="title" :hashtags="hashtags" />
+        <ShareButtons :title="review.title" :hashtags="review.hashtags" />
       </div>
     </div>
   </div>

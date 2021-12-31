@@ -2,14 +2,9 @@
   <div>
     <div class="row">
       <div class="col-12">
-        <Review
-          title="Title"
-          content="<h1>Hello World!</h1><p>This is a Test.</p>"
-          reviewer="#"
-          artist="#"
-          smartlink="#"
-          hashtags="test1,test2,test3"
-        />
+        <div v-for="review in reviews" :key="review.id">
+          <Review :review="review" />
+        </div>
       </div>
     </div>
   </div>
@@ -17,6 +12,13 @@
 
 <script lang="ts">
 import Vue from "vue";
+import { ReviewDTO } from "dto/ReviewDTO";
 
-export default Vue.extend({});
+export default Vue.extend({
+  async asyncData({ $axios }) {
+    const api: string = "/api/review";
+    const reviews: ReviewDTO[] = await $axios.$get(api);
+    return { reviews };
+  },
+});
 </script>

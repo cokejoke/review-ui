@@ -38,8 +38,16 @@ import Vue from "vue";
 export default Vue.extend({
   methods: {
     post() {
-      console.log(this.title);
-      console.log(this.content);
+      const review = {
+        title: this.title,
+        content: this.content,
+        artist: this.artist,
+        reviewer: this.bettogh,
+        smartlink: this.smartlink,
+        hashtags: this.hashtags,
+      };
+      const api: string = "/api/review";
+      this.$axios.post(api, review);
     },
   },
   data() {
